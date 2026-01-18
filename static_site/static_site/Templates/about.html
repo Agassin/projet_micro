@@ -1,0 +1,47 @@
+<!-- static_site/templates/about.html -->
+{% extends 'base.html' %}
+
+{% block title %}À propos - Mon Site Statique{% endblock %}
+
+{% block content %}
+<div class="about-container">
+    <h1>À propos de nous</h1>
+    
+    <div class="about-content">
+        <div class="about-text">
+            <h2>Notre mission</h2>
+            <p>Nous créons des sites web statiques modernes et performants avec les dernières technologies.</p>
+            
+            <h2>Notre équipe</h2>
+            <p>Notre équipe est composée de développeurs passionnés par la création d'expériences web exceptionnelles.</p>
+            
+            <h2>Technologies utilisées</h2>
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <i class="fab fa-python"></i>
+                    <span>Python & Django</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-html5"></i>
+                    <span>HTML5</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-css3-alt"></i>
+                    <span>CSS3</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-js"></i>
+                    <span>JavaScript</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="about-image">
+            <div class="image-placeholder">
+                <i class="fas fa-code"></i>
+                <p>Notre espace de développement</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

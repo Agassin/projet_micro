@@ -1,0 +1,57 @@
+<!-- static_site/templates/base.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mon Site Statique{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{% url 'home' %}" class="logo">MonSite</a>
+            <div class="nav-links">
+                <a href="{% url 'home' %}">Accueil</a>
+                <a href="{% url 'about' %}">À propos</a>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'profile' %}">Profil</a>
+                    <a href="{% url 'logout' %}" class="logout-btn">Déconnexion</a>
+                {% else %}
+                    <a href="{% url 'login' %}" class="login-btn">Connexion</a>
+                    <a href="{% url 'register' %}" class="register-btn">Inscription</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 Mon Site Statique. Tous droits réservés.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

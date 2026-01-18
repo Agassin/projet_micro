@@ -1,0 +1,48 @@
+<!-- static_site/templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Accueil - Mon Site Statique{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>Bienvenue sur notre site statique</h1>
+    <p>Un site web simple construit avec Django et un système SSO basique</p>
+    {% if not user.is_authenticated %}
+        <div class="cta-buttons">
+            <a href="{% url 'register' %}" class="btn btn-primary">Créer un compte</a>
+            <a href="{% url 'login' %}" class="btn btn-secondary">Se connecter</a>
+        </div>
+    {% endif %}
+</div>
+
+<div class="features">
+    <div class="feature-card">
+        <i class="fas fa-bolt"></i>
+        <h3>Rapide</h3>
+        <p>Notre site est optimisé pour des temps de chargement rapides.</p>
+    </div>
+    <div class="feature-card">
+        <i class="fas fa-lock"></i>
+        <h3>Sécurisé</h3>
+        <p>Système d'authentification sécurisé avec Django.</p>
+    </div>
+    <div class="feature-card">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>Responsive</h3>
+        <p>Design adapté à tous les appareils.</p>
+    </div>
+</div>
+
+<div class="content-section">
+    <h2>À propos de ce projet</h2>
+    <p>Ce projet démontre comment créer un site web statique avec Django, comprenant un système d'authentification de base (SSO simplifié).</p>
+    <p>Les fonctionnalités incluent :</p>
+    <ul>
+        <li>Pages statiques (Accueil, À propos)</li>
+        <li>Système d'inscription et de connexion</li>
+        <li>Gestion de session utilisateur</li>
+        <li>Interface utilisateur responsive</li>
+        <li>Design moderne et propre</li>
+    </ul>
+</div>
+{% endblock %}

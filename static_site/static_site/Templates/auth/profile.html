@@ -1,0 +1,39 @@
+<!-- static_site/templates/auth/profile.html -->
+{% extends 'base.html' %}
+
+{% block title %}Profil - Mon Site Statique{% endblock %}
+
+{% block content %}
+<div class="profile-container">
+    <div class="profile-header">
+        <div class="profile-avatar">
+            <i class="fas fa-user-circle"></i>
+        </div>
+        <div class="profile-info">
+            <h1>Bienvenue, {{ user.username }}!</h1>
+            <p>Membre depuis le {{ user.date_joined|date:"d F Y" }}</p>
+        </div>
+    </div>
+    
+    <div class="profile-content">
+        <div class="profile-card">
+            <h3>Vos informations</h3>
+            <ul class="profile-details">
+                <li><strong>Nom d'utilisateur:</strong> {{ user.username }}</li>
+                <li><strong>Email:</strong> {{ user.email|default:"Non spécifié" }}</li>
+                <li><strong>Dernière connexion:</strong> {{ user.last_login|date:"d F Y à H:i" }}</li>
+                <li><strong>Compte admin:</strong> {{ user.is_superuser|yesno:"Oui,Non" }}</li>
+            </ul>
+        </div>
+        
+        <div class="profile-card">
+            <h3>Actions</h3>
+            <div class="profile-actions">
+                <a href="{% url 'home' %}" class="btn btn-secondary">Retour à l'accueil</a>
+                <a href="{% url 'about' %}" class="btn btn-secondary">Voir la page À propos</a>
+                <a href="{% url 'logout' %}" class="btn btn-danger">Déconnexion</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
