@@ -1,0 +1,56 @@
+# --- Environnements Virtuels ---
+# C'est la règle la plus importante pour éviter l'erreur de chemin que vous avez eue
+venv/
+.venv/
+env/
+ENV/
+bin/
+lib/
+
+# --- Cache Python ---
+# Supprime les fichiers compilés qui accélèrent l'exécution mais ne sont pas du code
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Django (Si vous utilisez Django) ---
+# Ignore la base de données SQLite locale et les fichiers statiques collectés
+db.sqlite3
+db.sqlite3-journal
+/static/
+/media/
+
+# --- Configuration et Variables d'environnement ---
+# NE JAMAIS envoyer vos clés secrètes ou mots de passe sur GitHub
+.env
+.flaskenv
+
+# --- Outils de Distribution / Build ---
+# Si vous créez un package plus tard
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+
+# --- Tests et Qualité du code ---
+.target/
+.pyre/
+.pytest_cache/
+.mypy_cache/
+.tox/
+nosetests.xml
+coverage.xml
+.coverage
+htmlcov/
+
+# --- OS (Windows / Mac) ---
+Thumbs.db
+Desktop.ini
+.DS_Store
