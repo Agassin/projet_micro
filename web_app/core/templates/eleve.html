@@ -1,0 +1,245 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Espace Élève - Mathman project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">       
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/moodle.css' %}">
+</head>
+<body class="dashboard-page">
+<header class="eleve-header">
+    <div class="container">
+        <div class="header-top">
+            <div class="logo">
+                <i class="fas fa-calculator"></i>
+                <h1>Mon Espace Élève</h1>
+            </div>
+
+            <div class="user-info">
+                <div class="user-avatar">E</div>
+                <span id="currentUser">Élève</span>
+                <button class="logout-btn" id="logoutBtnEleve">
+                    <i class="fas fa-sign-out-alt"></i> Déconnexion
+                </button>
+            </div>
+        </div>
+
+        <h2>Bienvenue sur votre espace de travail MathPro</h2>
+    </div>
+</header>
+
+<main class="dashboard-main">
+    <div class="container">
+        <div class="eleve-section">
+            <h2><i class="fas fa-info-circle"></i> Mes informations</h2>
+            <div class="info-cards">
+                <div class="eleve-card">
+                    <h3><i class="fas fa-user-graduate"></i> Mon profil</h3>
+                    <p><strong>Niveau :</strong> Terminale S</p>
+                    <p><strong>Professeur :</strong> Mathias G.</p>
+                    <p><strong>Prochaine séance :</strong> Demain à 17h</p>
+                </div>
+
+                <div class="eleve-card">
+                    <h3><i class="fas fa-chart-line"></i> Mes progrès</h3>
+                    <p><strong>Moyenne générale :</strong> 14.5/20</p>
+                    <p><strong>Dernier test :</strong> 16/20 (Géométrie)</p>
+                    <p><strong>Objectif du mois :</strong> Maîtriser les dérivées</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="eleve-section">
+            <h2><i class="fas fa-book-open"></i> Mes cours et exercices</h2>
+            <div class="activity-grid">
+                <a href="#" class="cours-card" data-moodle-action="courses">
+                    <div class="activity-icon moodle-icon" style="background: linear-gradient(135deg, #38b000 0%, #70e000 100%);">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Cours en ligne Moodle</h3>
+                    <p>Accéder à mes cours sur MoodleCloud</p>
+                    <div class="moodle-indicator">
+                        <i class="fas fa-external-link-alt"></i> Connexion automatique
+                    </div>
+                </a>
+
+                <a href="#" class="cours-card">
+                    <div class="activity-icon" style="background: linear-gradient(135deg, #ff9e00 0%, #ffb700 100%);">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Exercices</h3>
+                    <p>Fiches d'exercices à télécharger</p>
+                </a>
+
+                <a href="#" class="cours-card" data-moodle-action="virtual-class">
+                    <div class="activity-icon moodle-icon" style="background: linear-gradient(135deg, #8338ec 0%, #9d4edd 100%);">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Classe virtuelle</h3>
+                    <p>Rejoindre la visio sur Moodle</p>
+                    <div class="moodle-indicator">
+                        <i class="fas fa-external-link-alt"></i> Moodle
+                    </div>
+                </a>
+
+                <a href="#" class="cours-card" data-moodle-action="resources">
+                    <div class="activity-icon moodle-icon" style="background: linear-gradient(135deg, #ff006e 0%, #ff5da2 100%);">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Ressources Moodle</h3>
+                    <p>Documents et ressources sur Moodle</p>
+                    <div class="moodle-indicator">
+                        <i class="fas fa-external-link-alt"></i> Moodle
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="eleve-section">
+            <h2><i class="fas fa-calendar-alt"></i> Mon planning</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon" style="background-color: #e3f2fd; color: #1565c0;">
+                        <i class="fas fa-calendar-day"></i>
+                    </div>
+                    <h3>Séances à venir</h3>
+                    <ul class="schedule-list">
+                        <li><strong>Demain 17h-18h30 :</strong> Dérivées et applications</li>
+                        <li><strong>Vendredi 16h-17h30 :</strong> Révision intégrales</li>
+                        <li><strong>Lundi 18h-19h30 :</strong> Probabilités conditionnelles</li>
+                    </ul>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon" style="background-color: #f3e5f5; color: #7b1fa2;">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Travaux à faire</h3>
+                    <ul class="todo-list">
+                        <li>Exercices sur les dérivées (à rendre vendredi)</li>
+                        <li>Révision chapitre 5 (géométrie dans l'espace)</li>
+                        <li>Préparer questions pour la prochaine séance</li>
+                    </ul>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon" style="background-color: #e8f5e9; color: #2e7d32;">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Ressources utiles</h3>
+                    <ul class="resources-list">
+                        <li><a href="#">Formulaire de mathématiques (PDF)</a></li>
+                        <li><a href="#">Annales du bac 2023</a></li>
+                        <li><a href="#">Calculateur en ligne</a></li>
+                        <li><a href="#">Fiches de révision</a></li>
+                    </ul>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon" style="background-color: #fff3e0; color: #ef6c00;">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Messagerie</h3>
+                    <p>Envoyer un message à votre professeur</p>
+                    <button class="message-btn">
+                        <i class="fas fa-envelope"></i> Nouveau message
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="eleve-section">
+            <h2><i class="fas fa-history"></i> Mon activité Moodle</h2>
+            <div class="moodle-activity-card">
+                <div class="moodle-activity-header">
+                    <h4><i class="fas fa-chart-line"></i> Statistiques d'accès</h4>
+                    <span class="moodle-status" id="eleveMoodleStatus">🟢 Connecté</span>
+                </div>
+                <div class="moodle-activity-content">
+                    <p>Nombre d'accès à Moodle : <strong id="eleveAccessCount">0</strong></p>
+                    <p>Dernier accès : <strong id="eleveLastAccess">Jamais</strong></p>
+                    <p>Identifiant Moodle : <code id="eleveMoodleId">-</code></p>
+                </div>
+                <button class="btn-moodle-help" onclick="showMoodleHelp()">
+                    <i class="fas fa-question-circle"></i> Aide Moodle
+                </button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="dashboard-footer">
+    <div class="container">
+        <p>Mathman project - Espace Élève © 2023</p>
+        <div class="footer-links">
+            <a href="#">Aide</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contact</a>
+            <a href="#">Mentions légales</a>
+        </div>
+    </div>
+</footer>
+
+<script src="{% static 'js/script.js' %}"></script>
+<script>
+    // Fonctions spécifiques à l'espace élève
+    function updateEleveMoodleStats() {
+        const accessCount = localStorage.getItem('moodle_access_count') || '0';
+        const accessHistory = JSON.parse(localStorage.getItem('moodle_access_history') || '[]');
+        const eleveHistory = accessHistory.filter(log =>
+            log.role === 'student' || (log.username && log.username !== 'maman')
+        );
+
+        document.getElementById('eleveAccessCount').textContent = eleveHistory.length;
+
+        if (eleveHistory.length > 0) {
+            const lastAccess = new Date(eleveHistory[eleveHistory.length - 1].timestamp);
+            const now = new Date();
+            const diffHours = Math.floor((now - lastAccess) / (1000 * 60 * 60));
+
+            let timeText;
+            if (diffHours < 1) {
+                timeText = 'À l\'instant';
+            } else if (diffHours < 24) {
+                timeText = `Il y a ${diffHours} heure${diffHours > 1 ? 's' : ''}`;
+            } else {
+                const diffDays = Math.floor(diffHours / 24);
+                timeText = `Il y a ${diffDays} jour${diffDays > 1 ? 's' : ''}`;
+            }
+
+            document.getElementById('eleveLastAccess').textContent = timeText;
+            document.getElementById('eleveMoodleStatus').textContent = '🟢 Connecté';
+
+            // Afficher l'identifiant Moodle de l'élève
+            const lastAccessLog = eleveHistory[eleveHistory.length - 1];
+            if (lastAccessLog.moodleUsername) {
+                document.getElementById('eleveMoodleId').textContent = lastAccessLog.moodleUsername;
+            }
+        } else {
+            document.getElementById('eleveMoodleStatus').textContent = '⚪ Jamais connecté';
+        }
+    }
+
+    function showMoodleHelp() {
+        alert(`Aide Moodle :
+
+1. Pour accéder à Moodle, cliquez sur "Cours en ligne Moodle"
+2. La connexion est automatique - aucun identifiant à retenir
+3. En cas de problème :
+   - Vérifiez votre connexion Internet
+   - Réessayez dans quelques minutes
+   - Contactez votre professeur
+
+Votre identifiant Moodle généré : ${document.getElementById('eleveMoodleId').textContent}`);
+    }
+
+    // Initialiser au chargement
+    document.addEventListener('DOMContentLoaded', updateEleveMoodleStats);
+</script>
+</body>
+</html>

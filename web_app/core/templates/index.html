@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathman project - Cours particuliers de mathématiques</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">       
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+<header class="commercial-header">
+    <div class="container">
+        <div class="header-top">
+            <div class="logo">
+                <i class="fas fa-square-root-alt"></i>
+                <h1>Mathman project</h1>
+            </div>
+
+            <div class="user-info">
+                <a href="{% url 'login' %}" class="logout-btn">
+                    <i class="fas fa-sign-in-alt"></i> Connexion
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Maîtrisez les mathématiques avec un professeur expérimenté</h1>
+            <p>Cours particuliers adaptés à tous les niveaux : collège, lycée et supérieur. Améliorez vos résultats et prenez confiance en vous.</p>
+            <div class="cta-buttons">
+                <a href="#features" class="btn-primary">Découvrir nos services</a>
+                <a href="{% url 'login' %}" class="btn-secondary">Accéder à mon espace</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="features" class="features-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Pourquoi choisir Mathman project ?</h2>
+            <p>Une approche pédagogique innovante pour des résultats concrets</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3>Suivi personnalisé</h3>
+                <p>Chaque élève bénéficie d'un programme adapté à ses besoins spécifiques et à son rythme d'apprentissage.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Progrès mesurables</h3>
+                <p>Des évaluations régulières pour visualiser l'évolution des compétences et ajuster la méthodologie.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-laptop"></i>
+                </div>
+                <h3>Plateforme interactive</h3>
+                <p>Accès à des ressources en ligne, exercices interactifs et séances enregistrées pour réviser à tout moment.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Ils nous font confiance</h2>
+            <p>Découvrez les témoignages de nos élèves et parents (on le cachera tant qu'il n'y a pas de vrai coms)</p>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "Grâce aux cours avec le professeur Guhel, mon fils a augmenté sa moyenne de 4 points en seulement 3 mois. Une approche pédagogique remarquable !"
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SD</div>
+                    <div class="author-info">
+                        <h4>Sophie Dubois</h4>
+                        <p>Maman de Thomas, Terminale S</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "Les cours en ligne sont très pratiques et la plateforme est intuitive. J'ai finalement compris les dérivées qui me posaient problème depuis le début de l'année."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">LC</div>
+                    <div class="author-info">
+                        <h4>Lucas Chen</h4>
+                        <p>Élève de Première</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "Professeur très à l'écoute et patient. Les fiches de révision et les exercices ciblés m'ont permis d'obtenir mon bac avec mention Bien en mathématiques."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MJ</div>
+                    <div class="author-info">
+                        <h4>Marie Joly</h4>
+                        <p>Ancienne élève, maintenant en prépa scientifique</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <h2>Prêt à progresser en mathématiques ?</h2>
+        <p>Rejoignez nos élèves qui ont déjà amélioré leurs résultats et leur confiance en eux. Que vous soyez élève ou parent, accédez à votre espace personnalisé.</p>
+        <a href="{% url 'login' %}" class="btn-primary">Accéder à mon espace</a>
+    </div>
+</section>
+
+<footer class="footer-section">
+    <div class="container">
+        <div class="logo" style="justify-content: center; margin-bottom: 20px;">
+            <i class="fas fa-square-root-alt"></i>
+            <h1>Mathman project</h1>
+        </div>
+
+        <div class="footer-links">
+            <a href="#">À propos</a>
+            <a href="#">Tarifs</a>
+            <a href="#">Méthodologie</a>
+            <a href="#">Contact</a>
+            <a href="#">Mentions légales</a>
+            <a href="#">Confidentialité</a>
+        </div>
+
+        <p>&copy; 2026 Mathman project - Tous droits réservés</p>
+        <p style="margin-top: 10px; color: #adb5bd; font-size: 0.9rem;">Cours particuliers de mathématiques - Professeur certifié</p>
+    </div>
+</footer>
+
+<script src="{% static 'js/home.js' %}"></script>
+</body>
+</html>
