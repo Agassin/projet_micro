@@ -1,15 +1,14 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tableau de bord Professeur - Mathman project</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">       
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
-    <link rel="stylesheet" href="{% static 'css/moodle.css' %}">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="moodle.css">
 </head>
 <body class="dashboard-page">
 <header class="dashboard-header">
@@ -23,14 +22,14 @@
             <div class="user-info">
                 <div class="user-avatar">MG</div>
                 <span>Professeur Guhel</span>
-                <button class="logout-btn" id="logoutBtn" onclick="localStorage.removeItem('moodle_access_history'); localStorage.removeItem('moodle_access_count'); window.location.href='/'">
+                <button class="logout-btn" id="logoutBtn">
                     <i class="fas fa-sign-out-alt"></i> Déconnexion
                 </button>
             </div>
         </div>
 
         <h2>Tableau de bord - Cours de mathématiques</h2>
-        <div id="moodleStats" style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin-top: 5px;"></div>     
+        <div id="moodleStats" style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin-top: 5px;"></div>
     </div>
 </header>
 
@@ -182,7 +181,7 @@
 
 <footer class="dashboard-footer">
     <div class="container">
-        <p>Mathman project © 2023 - Tableau de bord professeur</p>
+        <p>Mathman project &copy; 2023 - Tableau de bord professeur</p>
         <div class="footer-links">
             <a href="#">Mentions légales</a>
             <a href="#">Confidentialité</a>
@@ -192,8 +191,7 @@
     </div>
 </footer>
 
-<script src="{% static 'js/script.js' %}"></script>
-<script src="{% static 'js/dashboard.js' %}"></script>
+<script src="script.js"></script>
 <script>
     // Fonctions spécifiques au dashboard
     function refreshMoodleStats() {

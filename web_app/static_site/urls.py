@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from core import views
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,3 +26,6 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),
     path('eleve/', views.eleve, name='eleve'),
 ]
+
+# Django's staticfiles app will serve files from all directories listed in
+# `STATICFILES_DIRS` when `DEBUG=True`, so no manual `static()` mapping is needed.

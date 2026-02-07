@@ -1,15 +1,14 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Espace Élève - Mathman project</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">       
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
-    <link rel="stylesheet" href="{% static 'css/moodle.css' %}">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="moodle.css">
 </head>
 <body class="dashboard-page">
 <header class="eleve-header">
@@ -23,7 +22,7 @@
             <div class="user-info">
                 <div class="user-avatar">E</div>
                 <span id="currentUser">Élève</span>
-                <button class="logout-btn" id="logoutBtnEleve" onclick="window.location.href='/'">
+                <button class="logout-btn" id="logoutBtnEleve">
                     <i class="fas fa-sign-out-alt"></i> Déconnexion
                 </button>
             </div>
@@ -175,7 +174,7 @@
 
 <footer class="dashboard-footer">
     <div class="container">
-        <p>Mathman project - Espace Élève © 2023</p>
+        <p>Mathman project - Espace Élève &copy; 2023</p>
         <div class="footer-links">
             <a href="#">Aide</a>
             <a href="#">FAQ</a>
@@ -185,8 +184,7 @@
     </div>
 </footer>
 
-<script src="{% static 'js/script.js' %}"></script>
-<script src="{% static 'js/eleve.js' %}"></script>
+<script src="script.js"></script>
 <script>
     // Fonctions spécifiques à l'espace élève
     function updateEleveMoodleStats() {
