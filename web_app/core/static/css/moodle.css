@@ -1,0 +1,275 @@
+/* moodle.css - Styles spécifiques pour l'intégration Moodle */
+
+/* Indicateurs Moodle */
+.moodle-indicator {
+    display: inline-block;
+    background: rgba(56, 176, 0, 0.1);
+    color: #2e7d32;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.moodle-icon {
+    position: relative;
+}
+
+.moodle-icon::after {
+    content: 'Moodle';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #38b000;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 8px;
+    font-size: 0.6rem;
+    font-weight: bold;
+}
+
+.moodle-tool-icon {
+    background-color: #e8f5e9 !important;
+    color: #2e7d32 !important;
+}
+
+/* Badge Moodle */
+.moodle-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #ff006e;
+    color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Cartes Moodle spéciales */
+[data-moodle-action] {
+    position: relative;
+    border: 2px solid rgba(56, 176, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+[data-moodle-action]:hover {
+    border-color: #38b000;
+    box-shadow: 0 8px 20px rgba(56, 176, 0, 0.15);
+}
+
+/* Statistiques Moodle */
+.moodle-stats-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: var(--box-shadow);
+    margin-top: 20px;
+}
+
+.moodle-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: var(--border-radius);
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--gray-color);
+}
+
+.btn-refresh {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 auto;
+}
+
+.btn-refresh:hover {
+    background: #2a75ff;
+    transform: translateY(-2px);
+}
+
+/* Carte d'activité Moodle pour élève */
+.moodle-activity-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: var(--box-shadow);
+    border-left: 4px solid #38b000;
+}
+
+.moodle-activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.moodle-activity-header h4 {
+    color: var(--dark-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.moodle-status {
+    background: rgba(56, 176, 0, 0.1);
+    color: #2e7d32;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.moodle-activity-content {
+    margin-bottom: 20px;
+}
+
+.moodle-activity-content p {
+    margin-bottom: 10px;
+    color: var(--dark-color);
+}
+
+.moodle-activity-content code {
+    background: #f8f9fa;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    color: #ff006e;
+}
+
+.btn-moodle-help {
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 8px 16px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-moodle-help:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Animation de chargement Moodle */
+.moodle-loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(56, 176, 0, 0.3);
+    border-radius: 50%;
+    border-top-color: #38b000;
+    animation: moodle-spin 1s ease-in-out infinite;
+}
+
+@keyframes moodle-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Notification Moodle */
+.moodle-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 15px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-left: 4px solid #38b000;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: slideInRight 0.3s ease;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.moodle-notification i {
+    color: #38b000;
+    font-size: 1.2rem;
+}
+
+.moodle-notification-content h5 {
+    margin: 0 0 5px 0;
+    color: var(--dark-color);
+}
+
+.moodle-notification-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--gray-color);
+}
+
+.moodle-notification-close {
+    background: none;
+    border: none;
+    color: var(--gray-color);
+    cursor: pointer;
+    padding: 0;
+    margin-left: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .moodle-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .moodle-activity-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .moodle-notification {
+        left: 20px;
+        right: 20px;
+        max-width: calc(100% - 40px);
+    }
+}
