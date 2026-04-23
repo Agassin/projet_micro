@@ -1,17 +1,16 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Espace Élève - Mathman project</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">       
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+{% block title %}Mon Espace Élève - Mathman project{% endblock %}
+
+{% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
     <link rel="stylesheet" href="{% static 'css/moodle.css' %}">
-</head>
-<body class="dashboard-page">
+{% endblock %}
+
+{% block body_class %}class="dashboard-page"{% endblock %}
+
+{% block header %}
 <header class="eleve-header">
     <div class="container">
         <div class="header-top">
@@ -32,7 +31,9 @@
         <h2>Bienvenue sur votre espace de travail MathPro</h2>
     </div>
 </header>
+{% endblock %}
 
+{% block content %}
 <main class="dashboard-main">
     <div class="container">
         <div class="eleve-section">
@@ -172,7 +173,9 @@
         </div>
     </div>
 </main>
+{% endblock %}
 
+{% block footer %}
 <footer class="dashboard-footer">
     <div class="container">
         <p>Mathman project - Espace Élève © 2023</p>
@@ -184,8 +187,9 @@
         </div>
     </div>
 </footer>
+{% endblock %}
 
-<script src="{% static 'js/script.js' %}"></script>
+{% block extra_js %}
 <script src="{% static 'js/eleve.js' %}"></script>
 <script>
     // Fonctions spécifiques à l'espace élève
@@ -242,5 +246,6 @@ Votre identifiant Moodle généré : ${document.getElementById('eleveMoodleId').
     // Initialiser au chargement
     document.addEventListener('DOMContentLoaded', updateEleveMoodleStats);
 </script>
-</body>
-</html>
+{% endblock %}
+
+

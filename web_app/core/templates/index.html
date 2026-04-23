@@ -1,17 +1,14 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mathman project - Cours particuliers de mathématiques</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">       
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+
+{% block title %}Mathman project - Cours particuliers de mathématiques{% endblock %}
+
+{% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
-</head>
-<body>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+{% endblock %}
+
+{% block header %}
 <header class="commercial-header">
     <div class="container">
         <div class="header-top">
@@ -28,7 +25,9 @@
         </div>
     </div>
 </header>
+{% endblock %}
 
+{% block content %}
 <section class="hero-section">
     <div class="container">
         <div class="hero-content">
@@ -97,6 +96,71 @@
                     </div>
                 </div>
             </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "Les cours en ligne sont très pratiques et la plateforme est intuitive. J'ai finalement compris les dérivées qui me posaient problème depuis le début de l'année."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">LC</div>
+                    <div class="author-info">
+                        <h4>Lucas Chen</h4>
+                        <p>Élève de Première</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "Professeur très à l'écoute et patient. Les fiches de révision et les exercices ciblés m'ont permis d'obtenir mon bac avec mention Bien en mathématiques."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MJ</div>
+                    <div class="author-info">
+                        <h4>Marie Joly</h4>
+                        <p>Ancienne élève, maintenant en prépa scientifique</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <h2>Prêt à progresser en mathématiques ?</h2>
+        <p>Rejoignez nos élèves qui ont déjà amélioré leurs résultats et leur confiance en eux. Que vous soyez élève ou parent, accédez à votre espace personnalisé.</p>
+        <a href="{% url 'login' %}" class="btn-primary">Accéder à mon espace</a>
+    </div>
+</section>
+{% endblock %}
+
+{% block footer %}
+<footer class="footer-section">
+    <div class="container">
+        <div class="logo" style="justify-content: center; margin-bottom: 20px;">
+            <i class="fas fa-square-root-alt"></i>
+            <h1>Mathman project</h1>
+        </div>
+
+        <div class="footer-links">
+            <a href="#">À propos</a>
+            <a href="#">Tarifs</a>
+            <a href="#">Méthodologie</a>
+            <a href="#">Contact</a>
+            <a href="#">Mentions légales</a>
+            <a href="#">Confidentialité</a>
+        </div>
+
+        <p>&copy; 2026 Mathman project - Tous droits réservés</p>
+        <p style="margin-top: 10px; color: #adb5bd; font-size: 0.9rem;">Cours particuliers de mathématiques - Professeur certifié</p>
+    </div>
+</footer>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock %}
 
             <div class="testimonial-card">
                 <div class="testimonial-text">
