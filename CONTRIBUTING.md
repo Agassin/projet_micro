@@ -369,7 +369,7 @@ A : Ouvrez une issue avec le label "bug", décrivez le problème, les étapes po
 
 ## Questions ou Besoin d'Aide ?
 
-Ouvrez une issue ou contactez les mainteneurs du projet.
+Contactez les mainteneurs du projet via le serveur Discord https://discord.gg/Zc7dDQyPSQ.
 
 ## Licence
 
