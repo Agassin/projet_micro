@@ -115,20 +115,27 @@ Le serveur sera disponible à `http://127.0.0.1:8000/`
 
 ### Workflow Git recommandé
 
-#### 1. Fork du repository
-Cliquez sur le bouton "Fork" sur GitHub pour créer votre propre copie du projet.
+#### 1. Cloner le repository
+Pour cloner le repository, utilisez la commande suivante :
+
+```bash
+git clone https://github.com/Agassin/projet_micro.git
+cd projet_micro/web_app
+```
 
 #### 2. Créer une branche
+
 ```bash
-git checkout -b feature/nom-de-la-feature
+# patern de nommage : trigramme/feat|bugfix|hotfix|docs|test/description-breve-de-la-branche
+git checkout -b ase/feat/description-breve-de-la-feature
 ```
 
 **Convention de nommage des branches :**
-- `feature/description-breve` - pour les nouvelles fonctionnalités
-- `bugfix/description-du-bug` - pour les corrections de bugs
-- `hotfix/description-critique` - pour les corrections critiques
-- `docs/description-docs` - pour les mises à jour de documentation
-- `test/description-test` - pour l'ajout de tests
+- `trigramme/feat/description-breve` - pour les nouvelles fonctionnalités
+- `trigramme/bugfix/description-du-bug` - pour les corrections de bugs
+- `trigramme/hotfix/description-critique` - pour les corrections critiques
+- `trigramme/docs/description-docs` - pour les mises à jour de documentation
+- `trigramme/test/description-test` - pour l'ajout de tests
 
 #### 3. Effectuer vos modifications
 1. Suivez les standards de code du projet (voir ci-dessous)
@@ -141,16 +148,16 @@ git commit -m "type: description concise"
 ```
 
 **Format des messages de commit :**
-- `feat: ajouter une nouvelle fonctionnalité`
-- `fix: corriger un bug`
-- `docs: mettre à jour la documentation`
-- `test: ajouter des tests`
-- `refactor: améliorer le code existant`
-- `style: changements de formatage`
+- `feat(#<issue-number>): ajouter une nouvelle fonctionnalité`
+- `fix(#<issue-number>): corriger un bug`
+- `docs(#<issue-number>): mettre à jour la documentation`
+- `test(#<issue-number>): ajouter des tests`
+- `refactor(#<issue-number>): améliorer le code existant`
+- `style(#<issue-number>): changements de formatage`
 
 Exemple complet :
 ```
-feat: ajouter la page de profil utilisateur
+feat(#123): ajouter la page de profil utilisateur
 
 - Création de la vue ProfileView
 - Ajout du template profile.html
@@ -171,7 +178,7 @@ git pull origin main
 #### 6. Soumettre une Pull Request
 1. Poussez votre branche
 ```bash
-git push origin feature/nom-de-la-feature
+git push origin trigramme/feat/description-breve-de-la-branche
 ```
 
 2. Ouvrez une Pull Request sur GitHub
@@ -186,7 +193,7 @@ git push origin feature/nom-de-la-feature
 
 ### Style de code - PEP 8
 
-Suivez les conventions Python PEP 8 :
+Suivez les conventions Python PEP 8 (https://peps.python.org/pep-0008/):
 - Utilisez 4 espaces pour l'indentation
 - Longueur max des lignes : 79 caractères (100 pour les commentaires)
 - Utilisez des noms explicites pour les variables et les fonctions
@@ -279,9 +286,9 @@ Respectez la structure existante :
 - ✅ Documentation mise à jour
 
 ### Temps de réponse attendu
-- Revue initiale : 3-5 jours
-- Feedback sur les changements demandés : 2-3 jours
-- Approbation finale : 1-2 jours
+- Revue initiale : 1-2 jours
+- Feedback sur les changements demandés : 1 jours
+- Approbation finale : 3 jours
 
 ### Processus d'approbation
 1. Au moins une approbation d'un mainteneur
@@ -316,9 +323,6 @@ Respectez la structure existante :
 - Les merges majeurs sont annoncés dans les release notes
 - Crédits dans le README pour les contributions significatives
 
-### Hall of fame
-Les contributeurs avec 5+ contributions acceptées sont reconnus comme "Community Champions"
-
 ## 📚 Ressources utiles
 
 ### Documentation technique
@@ -327,9 +331,9 @@ Les contributeurs avec 5+ contributions acceptées sont reconnus comme "Communit
 - [Git Documentation](https://git-scm.com/doc)
 
 ### Tutoriels recommandés
-- Django for Beginners
-- Real Python Django Tutorials
-- Official Django Tutorial
+- Django for Beginners (https://www.youtube.com/watch?v=sm1mokevMWk)
+- Real Python Django Tutorials (https://realpython.com/tutorials/django/)
+- Official Django Tutorial (https://docs.djangoproject.com/en/3.2/intro/tutorial01/)
 
 ### Outils recommandés
 - `black` - Formateur de code Python
@@ -348,10 +352,10 @@ pip install black flake8 pytest pytest-django
 A : Pour les petites corrections, non. Pour les grandes fonctionnalités, ouvrez une issue d'abord pour discuter.
 
 **Q : Combien de temps avant que ma PR soit mergée ?**
-A : Cela dépend de la complexité. Généralement 1-2 semaines pour les petites PR, plus long pour les grandes.
+A : Cela dépend de la complexité. Généralement 3-4 jours pour les petites PR, plus long pour les grandes.
 
 **Q : Je suis novice en développement, puis-je quand même contribuer ?**
-A : Absolument ! Nous encourageons les contributions de tous les niveaux. Cherchez les issues étiquetées "good first issue".
+A : Absolument ! Nous encourageons les contributions de tous les niveaux. Cherchez les issues avec un label "good first issue".
 
 **Q : Qu'est-ce qu'un breaking change ?**
 A : Une modification qui casse la compatibilité avec le code existant. Exemple : changer la signature d'une fonction publique.
