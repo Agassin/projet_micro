@@ -1,23 +1,25 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mathman project - Connexion</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">       
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+{% block title %}Mathman project - Connexion{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
     <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
-</head>
-<body class="login-page">
+{% endblock %}
+
+{% block body_class %}class="login-page"{% endblock %}
+
+{% block header %}
 <header class="login-header">
     <div class="container">
         <h1><i class="fas fa-square-root-alt"></i> Mathman project</h1>
         <h2>Cours particuliers de mathématiques</h2>
     </div>
 </header>
+{% endblock %}
 
+{% block content %}
 <main class="login-main">
     <div class="container">
         <div class="login-card">
@@ -61,15 +63,14 @@
         </div>
     </div>
 </main>
-
-<footer class="login-footer">
-    <div class="container">
-        <p>Mathman project © 2023 - Plateforme de cours particuliers de mathématiques</p>
-        <p>Professeur certifié - Tous niveaux : Collège, Lycée, Supérieur</p>
-    </div>
-</footer>
+{% endblock %}
 
 <script src="{% static 'js/script.js' %}"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+    const form = document.getElementById('loginForm');
+    if (!form) return;
+{% block extra_js %}
 <script>
 document.addEventListener('DOMContentLoaded', function(){
     const form = document.getElementById('loginForm');
@@ -91,5 +92,4 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 });
 </script>
-</body>
-</html>
+{% endblock %}
