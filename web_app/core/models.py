@@ -1,3 +1,4 @@
-from django.db import models
+"""Modèles de données pour l'application core.
 
-# Create your models here.
+Ce module définit les modèles de base utilisés dans l'application.
+"""
