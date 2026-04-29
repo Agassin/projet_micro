@@ -1,0 +1,22 @@
+# Development dependencies for the project
+
+# Linting and code style
+flake8==7.0.0
+flake8-docstrings==1.7.0
+
+# Code formatting
+black==24.3.0
+
+# Import sorting
+isort==5.13.2
+
+# Testing
+pytest==8.1.1
+pytest-django==4.8.0
+pytest-cov==4.1.0
+
+# Django
+django>=3.2
+
+# Other useful development tools
+django-debug-toolbar==4.2.0

@@ -86,7 +86,11 @@ source venv/bin/activate
 
 #### 4. Installer les dépendances
 ```bash
+# Installer les dépendances de base
 pip install django
+
+# OU installer toutes les dépendances de développement (recommandé)
+pip install -r requirements-dev.txt
 ```
 
 #### 5. Initialiser la base de données
@@ -195,8 +199,57 @@ git push origin trigramme/feat/description-breve-de-la-branche
 
 Suivez les conventions Python PEP 8 (https://peps.python.org/pep-0008/):
 - Utilisez 4 espaces pour l'indentation
-- Longueur max des lignes : 79 caractères (100 pour les commentaires)
+- Longueur max des lignes : 100 caractères (au lieu de 79 pour plus de flexibilité)
 - Utilisez des noms explicites pour les variables et les fonctions
+- Respectez les 2 lignes blanches entre les définitions de fonctions au niveau du module
+
+#### Configuration de Flake8
+
+Un linter Flake8 a été mis en place pour garantir le respect automatique de PEP 8.
+
+**Installation du linter :**
+```bash
+# Option 1 : Installer uniquement Flake8
+pip install flake8
+
+# Option 2 : Installer toutes les dépendances de développement (recommandé)
+pip install -r requirements-dev.txt
+```
+
+**Utilisation du linter :**
+```bash
+# Vérifier l'ensemble du projet
+python -m flake8 web_app/
+
+# Vérifier un fichier spécifique
+python -m flake8 web_app/core/models.py
+
+# Afficher les statistiques détaillées
+python -m flake8 web_app/ --statistics
+
+# Afficher le code source des erreurs
+python -m flake8 web_app/ --show-source
+```
+
+**Configuration du linter :**
+Le fichier `.flake8` à la racine du projet contient la configuration :
+- **max-line-length** : 100 caractères (règle E501)
+- **Répertoires exclus** : migrations, venv, __pycache__, staticfiles, etc.
+- **Affichage** : Source code et statistiques activés
+
+**Types d'erreurs courantes détectées :**
+- **E302** : 2 lignes blanches attendues avant une définition
+- **E501** : Ligne trop longue (> 100 caractères)
+- **F401** : Import inutilisé
+- **W503** : Saut de ligne avant un opérateur binaire (ignoré)
+
+**Avant de soumettre une Pull Request :**
+```bash
+# Vérifiez qu'il n'y a pas d'erreurs Flake8
+python -m flake8 web_app/
+
+# Le linter ne doit retourner aucune erreur
+```
 
 Exemple :
 ```python
@@ -336,15 +389,23 @@ Respectez la structure existante :
 - Official Django Tutorial (https://docs.djangoproject.com/en/3.2/intro/tutorial01/)
 
 ### Outils recommandés
+- `flake8` - Linter Python pour PEP 8 (configuré dans `.flake8`)
 - `black` - Formateur de code Python
-- `flake8` - Linter Python
+- `isort` - Tri automatique des imports
 - `pytest` - Framework de test
 - `Django Debug Toolbar` - Outil de debugging Django
 
 ### Installation des outils de développement
 ```bash
-pip install black flake8 pytest pytest-django
+pip install -r requirements-dev.txt
 ```
+
+Cela installera :
+- `flake8` - Linter PEP 8
+- `black` - Formateur de code
+- `isort` - Outil de tri des imports
+- `pytest` & `pytest-django` - Framework de test
+- `Django Debug Toolbar` - Outil de debugging
 
 ## ❓ FAQ
 
