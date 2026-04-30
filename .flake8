@@ -1,0 +1,33 @@
+[flake8]
+# Configuration Flake8 for PEP 8 compliance
+# This file defines rules for Python code style checking
+
+# Maximum line length (PEP 8 recommends 79, but we allow up to 100 for practical reasons)
+max-line-length = 100
+
+# Exclude directories and files from linting
+exclude =
+    .git,
+    __pycache__,
+    .venv,
+    venv,
+    */migrations/,
+    .pytest_cache,
+    .coverage,
+    htmlcov,
+    node_modules,
+    *.egg-info,
+    build,
+    dist,
+    staticfiles
+
+# Ignore specific error codes if needed
+# E501 - Line too long (handled by max-line-length)
+# W503 - Line break before binary operator (deprecated PEP 8)
+ignore = W503
+
+# Show statistics for each error type
+statistics = True
+
+# Show the source code for each error
+show-source = True
