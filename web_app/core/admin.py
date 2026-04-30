@@ -1,3 +1,4 @@
-from django.contrib import admin
+"""Configuration d'administration Django pour l'application core.
 
-# Register your models here.
+Ce module enregistre les modèles dans l'interface d'administration Django.
+"""
