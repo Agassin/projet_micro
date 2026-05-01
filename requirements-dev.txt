@@ -19,5 +19,7 @@ factory-boy==3.3.0
 # Django
 django>=3.2
 
+djangorestframework==3.14.0
+
 # Other useful development tools
 django-debug-toolbar==4.2.0
