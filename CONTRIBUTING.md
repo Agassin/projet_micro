@@ -355,6 +355,10 @@ Respectez la structure existante :
 - **Issues GitHub** : Pour les bugs et les demandes de fonctionnalités
 - **Pull Requests** : Pour les discussions sur le code
 - **Email** : Pour les questions sensibles
+- **Discord #projet-micro-dev** : Channel dédié aux notifications des changements du repo GitHub
+
+### Notifications GitHub sur Discord
+Tous les changements du repository GitHub (pull requests, issues, commits) sont automatiquement notifiés dans le channel Discord [#projet-micro-dev](https://discord.gg/Zc7dDQyPSQ). Cela vous permet de rester informé en temps réel de l'activité du projet.
 
 ### Comment poser des questions
 - Vérifiez d'abord les issues existantes et la documentation
