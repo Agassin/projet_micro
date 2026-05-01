@@ -66,13 +66,11 @@ Pour une expérience de développement optimale avec analyse en temps réel :
 #### 1. Installer les extensions recommandées
 Ouvrez VS Code dans le dossier du projet. Une notification apparaîtra pour installer les extensions recommandées :
 - **Python** (ms-python.python) - Support Python complet
-- **Black Formatter** (ms-python.black-formatter) - Formatage automatique
 - **isort** (ms-python.isort) - Tri automatique des imports
 
 #### 2. Configuration automatique
 Les fichiers `.vscode/settings.json` et `.vscode/extensions.json` sont déjà configurés pour :
 - ✅ Analyse PEP 8 en temps réel avec flake8
-- ✅ Formatage automatique à la sauvegarde avec Black
 - ✅ Tri automatique des imports
 - ✅ Masquage des fichiers inutiles (__pycache__, migrations, etc.)
 
@@ -80,7 +78,7 @@ Les fichiers `.vscode/settings.json` et `.vscode/extensions.json` sont déjà co
 - Ouvrez un fichier Python (ex: `web_app/core/models.py`)
 - Tapez du code non conforme PEP 8 (ligne trop longue, espaces incorrects)
 - Les erreurs apparaissent automatiquement en rouge dans l'éditeur
-- Sauvegardez (Ctrl+S) : le code se formate automatiquement
+- Enregistrez (Ctrl+S) pour voir les diagnostics de flake8
 
 ### Configuration de l'environnement de développement
 
