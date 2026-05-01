@@ -123,6 +123,11 @@ Le serveur sera disponible à `http://127.0.0.1:8000/`
 - Le workflow doit s'exécuter et afficher un statut **succeed**.
 - En cas d'échec, ouvrez le job et lisez le log de l'étape en erreur.
 
+Le workflow CI/CD comprend 3 étapes :
+1. **Test** : Exécute les tests Django et flake8
+2. **Build** : Construit et teste le container Docker
+3. **Deploy** : Déploie automatiquement sur une plateforme Python gratuite (Render, Railway, ou PythonAnywhere)
+
 ### Workflow Git recommandé
 
 #### 1. Cloner le repository
