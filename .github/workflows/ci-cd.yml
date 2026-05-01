@@ -1,0 +1,56 @@
+name: CI/CD pipeline
+# utilisation de render pour le déploiement, déclenché uniquement sur la branche master
+on:
+  push:
+    branches:
+      - master
+
+env:
+  PYTHON_VERSION: '3.11'
+
+jobs:
+  test:
+    name: Test suite
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt
+
+      - name: Run Django tests
+        working-directory: web_app
+        run: python manage.py test
+
+      - name: Run Flake8
+        run: python -m flake8 web_app/
+
+  deploy:
+    name: Deploy to Render
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Render
+        if: secrets.RENDER_API_KEY != '' && secrets.RENDER_SERVICE_ID != ''
+        uses: renderinc/render-github-action@v1
+        with:
+          api_key: ${{ secrets.RENDER_API_KEY }}
+          service_id: ${{ secrets.RENDER_SERVICE_ID }}
+          branch: master
+
+      - name: Skip Render deployment
+        if: secrets.RENDER_API_KEY == '' || secrets.RENDER_SERVICE_ID == ''
+        run: |
+          echo "Aucun déploiement Render configuré : ajoutez RENDER_API_KEY et RENDER_SERVICE_ID aux secrets GitHub."
