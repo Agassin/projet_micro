@@ -7,6 +7,7 @@ Merci de votre intérêt pour contribuer à ce projet ! 🎉 Ce guide vous aider
 - [Introduction](#introduction)
 - [Types de contributions](#types-de-contributions)
 - [Comment commencer](#comment-commencer)
+- [Configuration de VS Code](#configuration-de-vs-code-recommandé)
 - [Processus de contribution](#processus-de-contribution)
 - [Standards et conventions](#standards-et-conventions)
 - [Processus de review](#processus-de-review)
@@ -57,6 +58,29 @@ Développer une application web robuste, maintenable et bien documentée qui ser
 - Git
 - Django 3.2+
 - Un navigateur moderne
+
+### Configuration de VS Code (recommandé)
+
+Pour une expérience de développement optimale avec analyse en temps réel :
+
+#### 1. Installer les extensions recommandées
+Ouvrez VS Code dans le dossier du projet. Une notification apparaîtra pour installer les extensions recommandées :
+- **Python** (ms-python.python) - Support Python complet
+- **Black Formatter** (ms-python.black-formatter) - Formatage automatique
+- **isort** (ms-python.isort) - Tri automatique des imports
+
+#### 2. Configuration automatique
+Les fichiers `.vscode/settings.json` et `.vscode/extensions.json` sont déjà configurés pour :
+- ✅ Analyse PEP 8 en temps réel avec flake8
+- ✅ Formatage automatique à la sauvegarde avec Black
+- ✅ Tri automatique des imports
+- ✅ Masquage des fichiers inutiles (__pycache__, migrations, etc.)
+
+#### 3. Vérifier que ça fonctionne
+- Ouvrez un fichier Python (ex: `web_app/core/models.py`)
+- Tapez du code non conforme PEP 8 (ligne trop longue, espaces incorrects)
+- Les erreurs apparaissent automatiquement en rouge dans l'éditeur
+- Sauvegardez (Ctrl+S) : le code se formate automatiquement
 
 ### Configuration de l'environnement de développement
 
