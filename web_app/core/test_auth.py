@@ -6,6 +6,7 @@ Ce module contient les tests pour l'authentification et l'autorisation.
 
 import pytest
 from django.test import TestCase, Client
+from django.urls import reverse
 from django.contrib.auth.models import User
 
 
@@ -57,6 +58,32 @@ class AuthenticationTestCase(TestCase):
 
         self.client.logout()
         self.assertNotIn('_auth_user_id', self.client.session)
+
+    def test_auth_api_login_success(self):
+        """Teste l'API d'authentification avec des identifiants codés en dur."""
+        response = self.client.post(
+            reverse('api_auth_login'),
+            data={
+                'username': 'maman',
+                'password': 'test123'
+            },
+            content_type='application/json'
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json().get('redirect_url'), '/dashboard/')
+
+    def test_auth_api_login_failure(self):
+        """Teste l'API d'authentification avec de mauvais identifiants."""
+        response = self.client.post(
+            reverse('api_auth_login'),
+            data={
+                'username': 'maman',
+                'password': 'wrong'
+            },
+            content_type='application/json'
+        )
+        self.assertEqual(response.status_code, 401)
+        self.assertFalse(response.json().get('success'))
 
     def test_multiple_user_login(self):
         """Teste la connexion de plusieurs utilisateurs différents."""
