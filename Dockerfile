@@ -16,5 +16,5 @@ WORKDIR /app/web_app
 
 RUN python manage.py collectstatic --noinput
 
-EXPOSE 8000
-CMD ["gunicorn", "static_site.wsgi:application", "--bind", "0.0.0.0:8000"]
+EXPOSE 10000
+CMD gunicorn static_site.wsgi:application --bind 0.0.0.0:$PORT
