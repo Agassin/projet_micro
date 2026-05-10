@@ -17,6 +17,7 @@ __pycache__/
 # Ignore la base de données SQLite locale et les fichiers statiques collectés
 db.sqlite3
 db.sqlite3-journal
+staticfiles/
 /static/
 /media/
 

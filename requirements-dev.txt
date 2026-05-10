@@ -21,3 +21,4 @@ django>=3.2
 
 # Other useful development tools
 django-debug-toolbar==4.2.0
+python-dotenv>=1.0.0
